@@ -4,86 +4,104 @@
 	<meta charset="utf-8">
 	<title>Template</title>
 	<meta name="viewport" content="initial-scale=1"/>
-	<link rel="stylesheet" media="screen" href="css/screen.css" >
+
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-<!-- BEGIN  out-->
+<style>
+	.euromedwidget { background: #3ea7a1 !important; border-radius: 5px !important; padding: 1px !important; }
+.euromedwidget * { font-family: Arial, sans-serif !important; margin: 0 !important; padding: 0 !important; text-decoration: none !important; position: static !important; float: none !important; border: none !important; box-shadow: none !important; }
+.euromedwidget a img { border-style: none !important; }
+.euromedwidget .euromedwidget__wrap { background: white !important; border-radius: 4px !important; padding: 13px 20px 14px 20px !important; }
+.euromedwidget .euromedwidget__link { float: right !important; border-radius: 3px !important; border: 1px solid #eaeaea !important; color: #b8b8b8 !important; text-decoration: none !important; padding: 4px 10px !important; font-size: 11px !important; }
+.euromedwidget .euromedwidget__title { color: #2f3737 !important; font-size: 21px !important; font-weight: bold !important; margin-bottom: 20px !important; }
+.euromedwidget .euromedwidget__item { overflow: hidden !important; margin-bottom: 23px !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__pic { float: left !important; margin-right: 19px !important; border-radius: 4px !important; overflow: hidden !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__itemtitle { display: block !important; color: #3ea8a1 !important; text-decoration: none !important; font-size: 13px !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__textcontent { font-size: 13px !important; line-height: 1.3 !important; margin-top: 8px !important; color: black !important; margin-bottom: 5px !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__date { display: inline-block !important; color: #c2c2c2 !important; font-size: 11px !important; font-style: italic !important; margin-right: 8px !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__comments { color: #c2c2c2 !important; font-style: italic !important; font-size: 11px !important; display: inline-block !important; text-decoration: none !important; }
+.euromedwidget .euromedwidget__item .euromedwidget__comments .euromedwidget__commentsicon { background-image: url('data:"image/png";base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAANCAYAAABPeYUaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MkFDMjkxMUEwMzgzMTFFNDhBOTM4MzUyRDY0NDU3RTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MkFDMjkxMUIwMzgzMTFFNDhBOTM4MzUyRDY0NDU3RTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyOUM5QjAwOTAzNzgxMUU0OEE5MzgzNTJENjQ0NTdFOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyOUM5QjAwQTAzNzgxMUU0OEE5MzgzNTJENjQ0NTdFOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpESdBcAAAEsSURBVHjalNM9SEJRGMbx4+1jaItECywKggaz3cGgwkmnhiJorCGIlgTbog+IBse2GoSGGnNIB2fFJQgaIpeohsBQIQnC4fY/8B69KYX3gR/nDue+93y812PbttIJX18qiQ9rWEQII7BQxQOy0JPr5gVLtdOPQzxjChdYwjjGEMEZZlDGsvNFvYpBhgyeMIEP1Z0GXnCLG+QQ16NZSRKP2PmjQGfyspJT53Y2kVLukpHzG7XYioeHAF6V+9QwbBVX1/X1vMvhuckApvFmtpPGrssi23Ldn6bIEaI47rHABvaRaB0sW/piWEBQesFkCH0yz48YzrEnzVjubLaqXNsKvDhABd9o4h5b+puYxd2vZnNkXtr8BHOYlEL/xrkS/b9coYCStHmllwP6EWAACVo/TFearUEAAAAASUVORK5CYII='); width: 17px; height: 13px; display: inline-block !important; vertical-align: middle !important; margin-right: 4px !important; position: relative !important; top: -2px !important; }
+.euromedwidget .euromedwidget__footer { font-size: 11px !important; color: white !important; white-space: nowrap !important; }
+.euromedwidget .euromedwidget__footer img { vertical-align: middle !important; padding: 11px 9px 4px 9px !important; position: relative !important; top: -4px !important; }
+.euromedwidget.euromedwidget_alt { background: #cbdbdb !important; }
+.euromedwidget.euromedwidget_alt .euromedwidget__footer { color: #9ea6a6 !important; }
+</style>
+<!-- BEGIN  out just for test-->
 <div class="out" style="width: 300px;padding:20px;border: 20px solid green;">
-	<!-- begin widget -->
-	<div class="widget" id="mmm">
-		<div class="widget__wrap">
-			<a href="#" class="widget__link">На сайт</a>
-			<div class="widget__title">Новости EuroMD</div>
+	<!-- begin euromedwidget -->
+	<div class="euromedwidget" id="euromedwidget">
+		<div class="euromedwidget__wrap">
+			<a href="#" class="euromedwidget__link">На сайт</a>
+			<div class="euromedwidget__title">Новости EuroMD</div>
 			
-			<div class="widget__item">
-				<div class="widget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
-				<div class="widget__content">
-					<a href="#" class="widget__itemtitle">Стоматология</a>
-					<div class="widget__textcontent">Профилактика заболеваний молочных зубов</div>
-					<div class="widget__meta">
-						<div class="widget__date">29 декабря</div>
-						<a href='#' class="widget__comments"><div class="widget__commentsicon"></div>8</a>
+			<div class="euromedwidget__item">
+				<div class="euromedwidget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
+				<div class="euromedwidget__content">
+					<a href="#" class="euromedwidget__itemtitle">Стоматология</a>
+					<div class="euromedwidget__textcontent">Профилактика заболеваний молочных зубов</div>
+					<div class="euromedwidget__meta">
+						<div class="euromedwidget__date">29 декабря</div>
+						<a href='#' class="euromedwidget__comments"><div class="euromedwidget__commentsicon"></div>8</a>
 					</div>
 				</div>
 			</div>
 
-			<div class="widget__item">
-				<div class="widget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
-				<div class="widget__content">
-					<a href="#" class="widget__itemtitle">Стоматология</a>
-					<div class="widget__textcontent">Профилактика заболеваний молочных зубов</div>
-					<div class="widget__meta">
-						<div class="widget__date">29 декабря</div>
-						<a href='#' class="widget__comments"><div class="widget__commentsicon"></div>8</a>
+			<div class="euromedwidget__item">
+				<div class="euromedwidget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
+				<div class="euromedwidget__content">
+					<a href="#" class="euromedwidget__itemtitle">Стоматология</a>
+					<div class="euromedwidget__textcontent">Профилактика заболеваний молочных зубов</div>
+					<div class="euromedwidget__meta">
+						<div class="euromedwidget__date">29 декабря</div>
+						<a href='#' class="euromedwidget__comments"><div class="euromedwidget__commentsicon"></div>8</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="widget__footer">
+		<div class="euromedwidget__footer">
 			<img src="img/logo.png" alt=""> –  Медицинский портал о здоровье
 		</div>
 	</div>
-	<!-- end widget -->
+	<!-- end euromedwidget -->
 
 
 
-	<!-- begin widget -->
-	<div class="widget widget_alt" id="widget">
-		<div class="widget__wrap">
-			<a href="#" class="widget__link">На сайт</a>
-			<div class="widget__title">Новости EuroMD</div>
+	<!-- begin euromedwidget -->
+	<div class="euromedwidget euromedwidget_alt" id="euromedwidget">
+		<div class="euromedwidget__wrap">
+			<a href="#" class="euromedwidget__link">На сайт</a>
+			<div class="euromedwidget__title">Новости EuroMD</div>
 			
-			<div class="widget__item">
-				<div class="widget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
-				<div class="widget__content">
-					<a href="#" class="widget__itemtitle">Стоматология</a>
-					<div class="widget__textcontent">Профилактика заболеваний молочных зубов</div>
-					<div class="widget__meta">
-						<div class="widget__date">29 декабря</div>
-						<a href='#' class="widget__comments"><div class="widget__commentsicon"></div>8</a>
+			<div class="euromedwidget__item">
+				<div class="euromedwidget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
+				<div class="euromedwidget__content">
+					<a href="#" class="euromedwidget__itemtitle">Стоматология</a>
+					<div class="euromedwidget__textcontent">Профилактика заболеваний молочных зубов</div>
+					<div class="euromedwidget__meta">
+						<div class="euromedwidget__date">29 декабря</div>
+						<a href='#' class="euromedwidget__comments"><div class="euromedwidget__commentsicon"></div>8</a>
 					</div>
 				</div>
 			</div>
 
-			<div class="widget__item">
-				<div class="widget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
-				<div class="widget__content">
-					<a href="#" class="widget__itemtitle">Стоматология</a>
-					<div class="widget__textcontent">Профилактика заболеваний молочных зубов</div>
-					<div class="widget__meta">
-						<div class="widget__date">29 декабря</div>
-						<a href='#' class="widget__comments"><div class="widget__commentsicon"></div>8</a>
+			<div class="euromedwidget__item">
+				<div class="euromedwidget__pic"><img src="http://placekitten.com/60/60" alt=""></div>
+				<div class="euromedwidget__content">
+					<a href="#" class="euromedwidget__itemtitle">Стоматология</a>
+					<div class="euromedwidget__textcontent">Профилактика заболеваний молочных зубов</div>
+					<div class="euromedwidget__meta">
+						<div class="euromedwidget__date">29 декабря</div>
+						<a href='#' class="euromedwidget__comments"><div class="euromedwidget__commentsicon"></div>8</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="widget__footer">
+		<div class="euromedwidget__footer">
 			<img src="img/logo1.png" alt=""> –  Медицинский портал о здоровье
 		</div>
 	</div>
-	<!-- end widget -->
+	<!-- end euromedwidget -->
 </div>
 <!-- END out-->
 
